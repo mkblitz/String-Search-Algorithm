@@ -16,4 +16,4 @@ And then
 
 ![image](https://github.com/mkblitz/String-Search-Algorithm/assets/47316278/ba68dde3-95dd-49a9-9853-4cacc762856c)
 
-In this way we take advantage of the fact that in most patterns, there will be a letter that will show up in the text fewer times than the first letter, and we'll therefore only need to be comparing the pattern to the text as the number that that letter shows up in the text.
+In this way we take advantage of the fact that in most patterns, there will be a letter that will show up in the text fewer times than the first letter, and we'll therefore only need to be comparing the pattern to the text as many times as the number that that letter shows up in the text.
