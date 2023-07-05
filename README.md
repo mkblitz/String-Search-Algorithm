@@ -1,5 +1,5 @@
 # String Search Algorithm
-String search algorithm I came up with which performs well, often beating benchmarks. Takes advantage of the pattern letter least found in the text.
+String search algorithm I came up with which performs well, often beating benchmarks. Takes advantage of the PATTERN letter least found in the TEXT.
 
 ## Algorithm Outline
 In general, we use string search algorithms when we're given a TEXT of length n, and a PATTERN of length m, and we want to find every instance of the pattern in the text, ideally in an eficiant manner.
