@@ -1,0 +1,55 @@
+def pattern_find(text, pattern):
+
+    # skip cases that are impossible/irrelevant, O(1)
+    if len(pattern) > len(text) or len(pattern) == 0:
+        return -1
+    
+    # preprocessing time 
+    # O(1)
+    let_dict = {}
+    n = len(text)
+
+    # creating the set of unique letters in the pattern, O(m)
+    pattern_set = set(pattern)
+
+    # creating lists of indices of all the letters that are in the text and pattern, O(n)
+    for let_ind in range(n):
+        
+        # O(1)
+        letter = text[let_ind]
+        
+        # O(1)
+        if letter in pattern_set:
+            try: 
+                let_dict[letter]
+            except:
+                let_dict[letter] = []
+            let_dict[letter].append(let_ind)
+        
+    # if none of the letters in the pattern are found in the text, end the algorithm. O(1)
+    if not let_dict:
+        return -1
+    
+    # finding the letter in the pattern that shows up fewest times in the text, O(1)
+    shortest = float('inf')
+
+    # O(unique(m))
+    for key, value in let_dict.items():
+        v_len = len(value)
+        if v_len < shortest:
+            # shortest list
+            shortest = v_len
+            # letter with the shortest list
+            short_l = key
+
+    # getting the index in the pattern of the letter that shows up fewest times in the text. O(m)
+    pattern_ind = pattern.find(short_l)
+
+    # matching time
+    # O(shortest count in text of letter in pattern)
+    for ind in let_dict[short_l]:
+        # checking if pattern matches at the index of the letter in the list. O(m)
+        if text[ind - pattern_ind:ind - pattern_ind + len(pattern)] == pattern:
+            print('match found at: ' + str(ind - pattern_ind))
+
+    return 'end'
